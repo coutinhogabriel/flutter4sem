@@ -1,0 +1,33 @@
+// Repositórios de dependências para o projeto
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Definir o diretório de build do projeto raiz
+rootProject.buildDir = "../build"
+
+// Configuração para todos os subprojetos
+subprojects {
+    // Define o diretório de build específico para cada subprojeto
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+
+    // Forçar o uso de jvmTarget = 1.8 para todas as tarefas Kotlin
+    afterEvaluate {
+        if (project.hasProperty("kotlinOptions")) {
+            project.kotlinOptions {
+                jvmTarget = "1.8"
+            }
+        }
+    }
+
+    // Definir dependências de avaliação
+    project.evaluationDependsOn(":app")
+}
+
+// Tarefa de limpeza para o diretório de build do projeto raiz
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,43 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // O plugin do Flutter deve ser aplicado depois dos plugins do Android e Kotlin
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.app_controle_acesso_qrcode"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"  // Define o jvmTarget para todas as compilações Kotlin
+    }
+
+    defaultConfig {
+        // ID único da aplicação
+        applicationId = "com.example.app_controle_acesso_qrcode"
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // Configuração de assinatura para o build de release (usando chave de debug para o momento)
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+
+
+flutter {
+    source = "../.."  // Caminho para a raiz do projeto Flutter
+}
