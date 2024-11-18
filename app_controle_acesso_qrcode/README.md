@@ -122,5 +122,24 @@ O Firebase é escolhido pela sua facilidade de integração com o Flutter, sua e
 - **Risco**: Notificações em tempo real podem falhar.
   - **Mitigação**: Testes contínuos com Firebase Cloud Messaging para garantir que as notificações sejam enviadas corretamente.
 
+- **FIGMA**
+ - **HOME**
+ (![alt text](image.png))
+
+ - **FORMULÁRIO VISITANTE**
+ ![alt text](image-1.png)
+
+ - **LOGIN**
+ ![alt text](image-2.png)
+
+ - **PAINEL ADM**
+ ![alt text](image-3.png)
+
+ - **PAINEL ADM**
+ ![alt text](image-4.png)
+
+
+
+
 
 
